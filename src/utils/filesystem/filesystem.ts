@@ -10,5 +10,5 @@ export default class Filesystem
 
 export enum Files
 {
-  config = "/home/sleeptide/Documents/portal/lib/config.json"
+  config = "lib/config.json"
 } 
