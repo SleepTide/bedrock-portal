@@ -1,0 +1,4 @@
+node_modules
+dist
+lib/account
+package-lock.json
