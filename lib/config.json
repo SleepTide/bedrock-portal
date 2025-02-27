@@ -1,0 +1,25 @@
+{
+  "server": {
+    "ip": "",
+    "port": 0
+  },
+  "world": {
+    "hostName": "",
+    "name": "",
+    "version": "",
+    "memberCount": 0,
+    "maxMembersCount": 0
+  },
+  "bot": {
+    "profilesFolder": "./lib/account/",
+    "realms": {
+      "realmInvite": ""
+    },
+    "conLog": null
+  },
+  "chat_invite": {
+    "cooldown": 30000,
+    "enabled": true,
+    "message": "invite"
+  }
+}

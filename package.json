@@ -1,0 +1,28 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear && node dist/index.js",
+    "package": "clear && rm -r dist; rm -r node_modules; rm -r lib/account/",
+    "setup": "clear && npm install && tsc && echo 'setup config.'",
+    "finish": "clear && echo 'WARNING: Will delete src after!! 5 seconds to respond...' && sleep 5 && rm -r dist; tsc && rm -r src; rm -r tsconfig.json; echo 'finished.'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bedrock-portal": "^1.0.1",
+    "bedrock-protocol": "^3.42.3",
+    "colors": "^1.4.0",
+    "prismarine-auth": "^2.6.0",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/multicast-dns": "^7.2.4",
+    "@types/node": "^22.13.1",
+    "@types/ws": "^8.5.14"
+  }
+}
