@@ -6,7 +6,6 @@ import Filesystem, { Files } from "../../utils/filesystem/filesystem";
 export default class Portal
 {
   private instance: BedrockPortal;
-  private flow: Authflow;
 
   constructor()
   {
@@ -19,20 +18,12 @@ export default class Portal
 
     const config = Filesystem.read(Files.config);
 
-    this.flow = new Authflow(undefined, './lib/account/', {
-      flow: "live",
-      authTitle: Titles.MinecraftNintendoSwitch,
-    }, (data) =>
-    {
-      Logger.warn(`No account! Please login into a account with the provided link: ${data.verification_uri}?otc=${data.user_code}`);
-    });
     this.instance = new BedrockPortal({
       ip: config.server.ip,
       port: config.server.port,
       world: config.world,
       joinability: Joinability.FriendsOfFriends,
-      //@ts-ignore
-      authflow: this.flow,
+      authflow: { cache: "lib/account", options: { flow: "live", authTitle: Titles.MinecraftNintendoSwitch }, username: "bot" }
     });
 
     Logger.info("setting up listeners...");
